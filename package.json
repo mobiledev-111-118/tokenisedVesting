@@ -7,7 +7,9 @@
     "compile": "npx hardhat compile",
     "deploy:test": "npx hardhat run scripts/deploy.js --network testnet",
     "deploy:prod": "npx hardhat run scripts/deploy.js --network mainnet",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "verify:test": "npx hardhat verify --network testnet DEPLOYED_CONTRACT_ADDRESS 'Constructor argument 3'",
+    "verify:prod": "npx hardhat verify --network mainnet DEPLOYED_CONTRACT_ADDRESS 'Constructor argument 3'"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +23,7 @@
     "hardhat": "^2.1.1"
   },
   "dependencies": {
+    "@nomiclabs/hardhat-etherscan": "^2.1.3",
     "@openzeppelin/contracts": "^4.1.0",
     "@openzeppelin/contracts-upgradeable": "^4.1.0",
     "@openzeppelin/test-helpers": "^0.5.11"
