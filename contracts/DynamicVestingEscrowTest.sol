@@ -297,8 +297,8 @@ contract DynamicVestingEscrow is Ownable {
         if (canClaim(recipient)) {
             // transfer unclaimed tokens to the recipient
             _claimFor(claimableAmountFor(recipient), recipient);
-            // transfer locked tokens to the SAFE_ADDRESS
         }
+        // transfer locked tokens to the SAFE_ADDRESS
         uint256 _bal = recipients[recipient].totalVestingAmount.sub(
             recipients[recipient].totalClaimed
         );

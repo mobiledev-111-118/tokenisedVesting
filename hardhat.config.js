@@ -5,7 +5,7 @@ require('@nomiclabs/hardhat-waffle');
 require('@nomiclabs/hardhat-ethers');
 require('@nomiclabs/hardhat-etherscan');
 
-const { mnemonic, api_key } = require('./secrets.json');
+const { mnemonic, api_key, account } = require('./secrets.json');
 
 task('accounts', 'Prints the list of accounts', async () => {
 	const accounts = await ethers.getSigners();
